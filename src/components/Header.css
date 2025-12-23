@@ -1,0 +1,88 @@
+:root {
+  --color-bg-header: #e9edf3;         /* jasne tło, można zostawić lub lekko ocieplić */
+  --color-logo: #2f4632;              /* ciemna zieleń */
+  --color-text: #1e1e1e;              /* ciemny tekst */
+  --color-accent: #c26d13;            /* ciepły bursztynowy / pomarańcz jesienny */
+  --color-hover: #a65e12;             /* ciemniejszy wariant na hover */
+  --font-brand: 'Birthstone', cursive;
+}
+
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 1rem 2rem;
+    background-color: var(--color-bg-header);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        .left-side, .center, .right-side {
+            flex: 1;
+        }
+
+        .left-side {
+            display: flex;
+            justify-content: flex-start;
+            flex-shrink: 0;
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+        }
+
+        .right-side {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+         .logo{
+            font-family: var(--font-brand);
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: 0.05rem;
+            color: var(--color-logo);
+            white-space: nowrap;
+        }
+
+        .nav {
+            ul {
+                display: flex;
+                gap: 1.5rem;
+                list-style: none;
+
+                li a {
+                    text-decoration: none;
+                    color: var(--color-text);
+                    font-weight: 500;
+                    transition: color 0.3s ease;
+
+                    &:hover {
+                        color: var(--color-accent);
+                    }
+                }
+            }
+        }
+
+        .book-btn {
+            background-color: var(--color-accent);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: var(--color-hover);
+            }
+        }
+    }
+}
