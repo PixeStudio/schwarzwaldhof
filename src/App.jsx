@@ -8,7 +8,25 @@ function App() {
   return (
     <div>
       <Header />
-      <HeroSlider />
+      <main className='page'>
+        <section id='about' className='section'>
+          <HeroSlider />
+        </section>
+      
+        <section id='rooms' className='section'>
+          <HeroSlider />
+        </section>
+
+        <section id='gallery' className='section'>
+          <HeroSlider />
+        </section>
+
+        <section id='contact' className='contact'>
+          <div className="contact_inner">
+            <HeroSlider />
+          </div>
+        </section>
+      </main>
     </div>
   );
 }

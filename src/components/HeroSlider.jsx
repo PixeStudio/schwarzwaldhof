@@ -42,6 +42,8 @@ function HeroSlider() {
   const [current, setCurrent] = useState(0);
   const [isFading, setIsFading] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
+  const [touchStartX, setTouchStartX] = useState(null);
+
 
   useEffect(() => {
   const interval = setInterval(() => {
@@ -57,7 +59,6 @@ function HeroSlider() {
   return () => clearInterval(interval);
 }, [isPaused]);
 
-
   const { title, subtitle } = slides[current];
 
   return (
@@ -66,9 +67,49 @@ function HeroSlider() {
         className={`hero-slide ${isFading ? "fade" : ""}`}
         style={{
           backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0)), url(${slides[current].image})`,
+          cursor: isPaused ? "default" : "pointer"
         }}
-        onMouseEnter={() => setIsPaused(true)}
+        onMouseDown={() => setIsPaused(true)}
+        onMouseUp={() => setIsPaused(false)}
         onMouseLeave={() => setIsPaused(false)}
+
+        onTouchStart={(e) => {
+          setIsPaused(true);
+          setTouchStartX(e.touches[0].clientX);
+        }}
+
+        onTouchEnd={(e) => {
+          setIsPaused(false);
+
+          if (touchStartX === null) return;
+
+          const touchEndX = e.changedTouches[0].clientX;
+          const deltaX = touchEndX - touchStartX;
+
+          if (deltaX > 50) {
+            // swipe right → previous
+            setIsFading(true);
+            setTimeout(() => {
+              setCurrent(prev => (prev - 1 + slides.length) % slides.length);
+              setIsFading(false);
+            }, 300);
+          }
+
+          if (deltaX < -50) {
+            // swipe left → next
+            setIsFading(true);
+            setTimeout(() => {
+              setCurrent(prev => (prev + 1) % slides.length);
+              setIsFading(false);
+            }, 300);
+          }
+          setTouchStartX(null);
+        }}
+
+        onTouchCancel={() => {
+          setIsPaused(false);
+          setTouchStartX(null);
+        }}
         >
 
         <button 

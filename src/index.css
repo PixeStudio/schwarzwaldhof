@@ -13,6 +13,8 @@
   --radius-md: 12px;
   --radius-lg: 12px;
   --transition: all 0.3s ease;
+
+  --header-height: 72px;
 }
 
 /* Reset */
@@ -22,9 +24,44 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-main);
   background-color: var(--color-bg);
   color: var(--color-text);
   line-height: 1.5;
+  overflow: hidden;
+}
+
+.page {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: var(--header-height);
+  padding-top: var(--header-height);
+  scrollbar-width: none;
+}
+
+.section {
+  height: calc(100vh - var(--header-height));
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact {
+  height: calc(100vh - var(--header-height));
+  scroll-snap-align: start;
+  overflow: hidden; /* ważne */
+}
+
+.contact__inner {
+  height: 100%;
+  overflow-y: auto;     /* tu przewijasz formularz / treści */
+  padding: 2rem;
 }

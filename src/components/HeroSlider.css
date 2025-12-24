@@ -2,7 +2,7 @@
     background-color: gray;
     position: relative;
     width: 100%;
-    height: 80vh;
+    height: calc(100vh - var(--header-height));
     overflow: hidden;
 
     & .hero-slide {
@@ -19,6 +19,40 @@
 
         &.fade {
             opacity: 0;
+        }
+    }
+
+    & .hero-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 20;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        background: rgba(0, 0, 0, 0.25);
+        color: white;
+        font-size: 28px;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3 ease, transform 0.3s ease;
+        user-select: none;
+
+        &:hover {
+            background: rgba(0, 0, 0, 0.45);
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        &.left {
+            left: 2rem;
+        }
+
+        &.right {
+            right: 2rem;
         }
     }
 
@@ -49,7 +83,7 @@
         left: 50%;
         transform: translateX(-50%);
         gap: 0.2rem;
-        z-index: 10;
+        z-index: 1;
 
         & .dot {
             width: 12px;
