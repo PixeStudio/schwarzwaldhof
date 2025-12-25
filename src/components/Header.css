@@ -7,7 +7,6 @@
   --font-brand: 'Birthstone', cursive;
 }
 
-
 .header {
     position: sticky;
     height: var(--header-height);
@@ -64,9 +63,13 @@
                     text-decoration: none;
                     color: var(--color-text);
                     font-weight: 500;
-                    transition: color 0.3s ease;
+                    transition: color 0.3s ease, color 0.3s ease;
 
                     &:hover {
+                        color: var(--color-accent);
+                    }
+
+                    &.active {
                         color: var(--color-accent);
                     }
                 }
