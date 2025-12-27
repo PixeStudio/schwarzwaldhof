@@ -1,0 +1,55 @@
+.section#rooms {
+  background-color: var(--bg-section);
+}
+
+.rooms {
+  width: 100%;
+  height: 100%;
+
+  &__header {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: clamp(1.5rem, 3vw, 3rem);
+  }
+
+  &__title {
+    color: var(--forest-dark);
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 0.5rem;
+  }
+
+  &__intro {
+    color: var(--text-muted);
+    max-width: 60ch;
+  }
+
+  &__content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 clamp(1.5rem, 3vw, 3rem);
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__item {
+    color: var(--text-main);
+  }
+
+  &__item-title {
+    color: var(--forest-dark);
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+  }
+
+  &__item-desc {
+    color: var(--text-muted);
+    max-width: 70ch;
+  }
+
+  &__item-meta {
+    font-size: 0.9rem;
+    color: var(--text-light);
+  }
+}

@@ -13,7 +13,7 @@ export default function FloatingContactPanel() {
       </div>
 
       <div className="contact-icons">
-        <a href="#"><FaFacebookF /></a>
+        <a><FaFacebookF /></a>
         <a href="#"><FaInstagram /></a>
         <a href="#"><FaWhatsapp /></a>
         <a href="#"><BsChatDots /></a>

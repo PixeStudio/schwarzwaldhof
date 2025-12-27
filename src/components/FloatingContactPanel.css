@@ -1,5 +1,5 @@
 :root {
-  --icons-width: 64px;
+  --icons-width: 36px;
   --toggle-width: 32px;
   --panel-height: 200px;
   --panel-bg: rgba(0, 0, 0, 0.6);
@@ -14,6 +14,7 @@
   display: flex;
   flex-direction: row;
   z-index: 20;
+  
 
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -44,10 +45,12 @@
 
   /* === STRZAŁKA === */
   & .contact-toggle {
-    width: var(--toggle-width);
+    width: 12px;
     height: 100%;
     background: rgba(0, 0, 0, 0.55);
     color: white;
+    border-radius: 8px 0 0 8px;
+    box-shadow: -1px 2px 6px rgba(0, 0, 0, 0.4);
 
     display: flex;
     align-items: center;
@@ -55,10 +58,6 @@
 
     cursor: pointer;
     user-select: none;
-
-    /* kanciasty klin */
-    clip-path: polygon(0 0, 100% 50%, 0 100%);
-    transform: rotate(180deg);
   }
 
   /* === HOVER – CAŁY PANEL WJEŻDŻA === */

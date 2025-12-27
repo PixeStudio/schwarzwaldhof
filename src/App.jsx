@@ -1,9 +1,7 @@
-import { useState, useEffect, useLayoutEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Header from './components/Header';
-import "./components/Header.css";
-import Hero from "./components/Hero";
-import "./components/Hero.css";
 import HeroSlider from "./components/HeroSlider";
+import Rooms from './components/Rooms';
 import FloatingContactPanel from './components/FloatingContactPanel';
 
 function App() {
@@ -58,7 +56,7 @@ function App() {
         </section>
       
         <section id='rooms' className='section observe'>
-          <HeroSlider />
+          <Rooms />
         </section>
 
         <section id='gallery' className='section observe'>

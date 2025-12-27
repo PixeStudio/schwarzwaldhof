@@ -1,21 +1,71 @@
 /* src/styles/index.css */
 
 :root {
-  --color-bg: #f7f8fa;
-  --color-text: #1f2933;
-  --color-text-light: #555;
-  --color-primary: #6b4eff;
-  --color-secondary: #e2e8f0;
-
-
+  /* =========================
+     CORE / LAYOUT
+     ========================= */
+  --header-height: 72px;
   --font-main: 'Segoe UI', sans-serif;
+  --transition: all 0.3s ease;
+
+  /* =========================
+     NEW DESIGN TOKENS (SOURCE OF TRUTH)
+     ========================= */
+
+  /* BACKGROUNDS */
+  --bg-main: #f7f8fa;
+  --bg-section: #f1f3ef;
+  --bg-soft: #e9eee8;
+
+  /* TEXT */
+  --text-main: #1f2933;
+  --text-muted: #5f6b5f;
+  --text-light: #7a857a;
+
+  /* FOREST (brand / structure) */
+  --forest-dark: #2f4632;
+  --forest-medium: #4a6b4f;
+  --forest-soft: #8fa99a;
+
+  /* AUTUMN (accent / CTA) */
+  --autumn-main: #c26d13;
+  --autumn-hover: #a65e12;
+
+  /* STONE / WATER */
+  --stone-light: #e2e6e1;
+  --stone-medium: #cfd6cf;
+
+  /* WOOD */
+  --wood-soft: #8b6b4f;
+
+  /* =========================
+     LEGACY VARIABLES (MAPPED)
+     ========================= */
+
+  /* OLD BACKGROUND */
+  --color-bg: var(--bg-main);
+  --color-secondary: var(--stone-light);
+
+  /* OLD TEXT */
+  --color-text: var(--text-main);
+  --color-text-light: var(--text-muted);
+
+  /* OLD BRAND */
+  --color-logo: var(--forest-dark);
+  --color-primary: var(--autumn-main);
+
+  /* HEADER */
+  --color-bg-header: var(--bg-main);
+  --color-accent: var(--autumn-main);
+  --color-hover: var(--autumn-hover);
+  --font-brand: 'Birthstone', cursive;
+
+  /* RADIUS */
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 12px;
-  --transition: all 0.3s ease;
-
-  --header-height: 72px;
 }
+
 
 /* Reset */
 * {
