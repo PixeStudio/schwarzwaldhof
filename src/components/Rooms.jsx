@@ -1,5 +1,5 @@
 import "./Rooms.css";
-import { roomsData } from "./rooms.data";
+import {roomsData} from "./rooms.data";
 
 function Rooms() {
   return (
@@ -12,15 +12,27 @@ function Rooms() {
       </header>
 
       <div className="rooms__content">
-        {roomsData.map(room => (
-            <div key={room.id} className="rooms__item">
-                <h3 className="rooms__item-title">{room.name}</h3>
-                <p className="rooms__item-desc">{room.description}</p>
-                <p className="rooms__item-meta">
-                    {room.size} · up to {room.guests} guests · from €{room.priceFrom}
-                </p>
+        {roomsData.map((room) => (
+           <article key={room.id} className="room-card">
+            <div className="room-card__media">
+              <img src={room.image} alt={room.name} loading="eager" decoding="async" />
             </div>
+
+            <div className="room-card__body">
+              <h3 className="room-card__title">{room.name}</h3>
+              <p className="room-card__description">{room.description}</p>
+              <ul className="room-card__meta">
+                <li>{room.size}</li>
+                <li>Up to {room.guests} guests</li>
+                <li>From €{room.priceFrom}</li>
+              </ul>
+              <div className="room-card__actions">
+                <button className="room-card__btn">View details</button>
+              </div>
+            </div>
+          </article>
         ))}
+       
       </div>
     </div>
   );

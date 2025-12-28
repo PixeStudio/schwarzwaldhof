@@ -1,4 +1,6 @@
-// src/components/rooms.data.js
+import hero1 from "../assets/hero/hero_1.jpg";
+import hero2 from "../assets/hero/hero_2.jpg";
+import hero3 from "../assets/hero/hero_3.jpg";
 
 export const roomsData = [
   {
@@ -8,7 +10,7 @@ export const roomsData = [
     size: "22 m²",
     guests: 2,
     priceFrom: 120,
-    image: "/assets/rooms/room_classic.jpg",
+    image: hero1
   },
   {
     id: "comfort-suite",
@@ -17,7 +19,7 @@ export const roomsData = [
     size: "35 m²",
     guests: 3,
     priceFrom: 165,
-    image: "/assets/rooms/room_comfort.jpg",
+    image: hero2
   },
   {
     id: "family-room",
@@ -26,6 +28,6 @@ export const roomsData = [
     size: "40 m²",
     guests: 4,
     priceFrom: 195,
-    image: "/assets/rooms/room_family.jpg",
+    image: hero3
   },
 ];
