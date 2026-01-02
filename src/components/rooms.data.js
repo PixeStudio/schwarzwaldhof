@@ -1,6 +1,6 @@
-import hero1 from "../assets/hero/hero_1.jpg";
-import hero2 from "../assets/hero/hero_2.jpg";
-import hero3 from "../assets/hero/hero_3.jpg";
+import hero1 from "../assets/rooms/rooms_1.jpg";
+import hero2 from "../assets/rooms/rooms_2.jpg";
+import hero3 from "../assets/rooms/rooms_3.webp";
 
 export const roomsData = [
   {

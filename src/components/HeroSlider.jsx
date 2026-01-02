@@ -7,7 +7,7 @@ import hero1 from "../assets/hero/hero_1.jpg";
 import hero2 from "../assets/hero/hero_2.jpg";
 import hero3 from "../assets/hero/hero_3.jpg";
 import hero4 from "../assets/hero/hero_4.jpeg";
-import hero5 from "../assets/hero/hero_5.jpg";
+import hero5 from "../assets/hero/hero_5.avif";
 
 // Lista slajdów
 const slides = [

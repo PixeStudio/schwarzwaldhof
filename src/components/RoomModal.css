@@ -1,0 +1,123 @@
+.room-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: grid;
+  place-items: center;
+
+  &__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+  }
+
+  &__panel {
+    position: relative;
+    width: min(1000px, calc(100vw - 2rem));
+    height: min(90vh, 720px);
+    background: var(--bg-main);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    z-index: 1;
+
+    display: grid;
+    grid-template-rows: 320px 1fr auto;
+
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+    transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  &__close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    cursor: pointer;
+    z-index: 3;
+  }
+
+  &__media {
+    background: var(--stone-light);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  &__content {
+    padding: 1.5rem;
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  &__title {
+    color: var(--forest-dark);
+    font-size: 1.6rem;
+  }
+
+  &__desc {
+    color: var(--text-muted);
+    max-width: 70ch;
+  }
+
+  &__meta {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.25rem;
+    color: var(--text-light);
+    font-size: 0.95rem;
+  }
+
+  &__footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--stone-medium);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--bg-soft);
+  }
+
+  &__price {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--forest-dark);
+  }
+
+  &__cta {
+    padding: 0.65rem 1.5rem;
+    border-radius: var(--radius-sm);
+    border: none;
+    background: var(--autumn-main);
+    color: #fff;
+    cursor: pointer;
+  }
+
+  &.is-open {
+    .room-modal__panel {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .room-modal__backdrop {
+      opacity: 1;
+    }
+  }
+}
+

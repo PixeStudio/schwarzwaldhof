@@ -1,7 +1,24 @@
 import "./Rooms.css";
 import {roomsData} from "./rooms.data";
+import RoomModal from "./RoomModal";
+import { useState, useEffect } from "react";
+import { FiEye, FiSearch } from "react-icons/fi";
 
 function Rooms() {
+
+  const openModal = (room) => setSelectedRoom(room);
+  const [selectedRoom, setSelectedRoom] = useState(null);
+  useEffect(() => {
+    const page = document.querySelector(".page")
+    if (!page) return;
+    if (selectedRoom) page.style.overflow = "hidden";
+    else page.style.overflow = "scroll";
+
+    return () => {
+      page.style.overflow = "scroll";
+    };
+  }, [selectedRoom]);
+
   return (
     <div className="rooms">
       <header className="rooms__header">
@@ -16,6 +33,9 @@ function Rooms() {
            <article key={room.id} className="room-card">
             <div className="room-card__media">
               <img src={room.image} alt={room.name} loading="eager" decoding="async" />
+              <div className="room-card__icons">
+                <button className="room-card__icon" aria-label="View gallery" onClick={() => openModal(room)}><FiEye /></button>
+              </div>
             </div>
 
             <div className="room-card__body">
@@ -27,15 +47,17 @@ function Rooms() {
                 <li>From €{room.priceFrom}</li>
               </ul>
               <div className="room-card__actions">
-                <button className="room-card__btn">View details</button>
+                <button className="room-card__btn" onClick={() => openModal(room)}>View details</button>
               </div>
             </div>
           </article>
         ))}
        
       </div>
-    </div>
+      <RoomModal room={selectedRoom} onClose={() => setSelectedRoom(null)}/></div>
+    
   );
+  
 }
 
 export default Rooms;
